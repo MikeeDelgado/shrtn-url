@@ -1,6 +1,6 @@
 name: Nodejs CI
 
-on: [ push ]
+on: [ push, pull_request ]
 
 jobs:
   builds:
@@ -13,9 +13,13 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 12.x
-    - run: npm install
-    - run: npm run build
-    - run: npm run test
-    - run: npm run test:e2e
+    - name: Install dependencies
+      run: npm install
+    - name: Building dist
+      run: npm run build
+    - name: Executing unit test
+      run: npm run test
+    - name: Executing e2e test
+      run: npm run test:e2e
       env:
         CI: true
