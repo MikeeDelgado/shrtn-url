@@ -3,20 +3,20 @@ import { HealthController } from './health.controller';
 import { HealthService } from '../../application/health.service';
 
 describe('HealthController e2e', () => {
-  let healthController: HealthController;
+	let healthController: HealthController;
 
-  beforeEach(async () => {
-    const healthModule: TestingModule = await Test.createTestingModule({
-      controllers: [HealthController],
-      providers: [HealthService],
-    }).compile();
+	beforeEach(async () => {
+		const healthModule: TestingModule = await Test.createTestingModule({
+			controllers: [HealthController],
+			providers: [HealthService],
+		}).compile();
 
-    healthController = healthModule.get<HealthController>(HealthController);
-  });
+		healthController = healthModule.get<HealthController>(HealthController);
+	});
 
-  describe('root', () => {
-    it('should return "Healthy Service"', () => {
-      expect(healthController.getHealth()).toBe('Healthy Service');
-    });
-  });
+	describe('root', () => {
+		it('should return "Healthy Service"', () => {
+			expect(healthController.getHealth()).toBe('Healthy Service');
+		});
+	});
 });
