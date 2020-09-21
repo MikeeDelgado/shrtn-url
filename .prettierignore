@@ -1,0 +1,21 @@
+# github actions:
+.github/workflows/*
+
+# configuration files & docs:
+*.json
+*.md
+*.yaml
+*.xml
+
+# .vscode settings:
+.vscode
+
+# linters:
+.eslintrc.js
+
+# artifacts:
+build
+coverage
+
+# packages:
+node_modules
